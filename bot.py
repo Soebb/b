@@ -46,6 +46,7 @@ def add_button(update: Update, context: CallbackContext):
         text = splitted[0].strip()
         url = splitted[1].strip()
         print(text,url)
+        TEXTT = text
     except Exception as err:
         update.message.reply_text(str(err)[:2000])
         return
@@ -62,7 +63,7 @@ def preview(update: Update, context: CallbackContext):
     user_d = context.user_data
     buttons = user_d.get('buttons')
     if buttons:
-        update.message.reply_text((BOT_TOKEN), reply_markup=InlineKeyboardMarkup(buttons))
+        update.message.reply_text((TEXTT), reply_markup=InlineKeyboardMarkup(buttons))
     else:
         update.message.reply_text('No buttons added yet')
     main_menu(update,context)
