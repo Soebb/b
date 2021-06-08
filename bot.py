@@ -69,11 +69,17 @@ def preview(update: Update, context: CallbackContext):
     main_menu(update,context)
 
 def send(update: Update, context: CallbackContext):
+    try:
+        splitted = args.split('-')
+        print(splitted)
+        text = splitted[0].strip()
+        print(text)
+
     user_d = context.user_data
     buttons = user_d.get('buttons')
     if buttons:
         update.message.reply_text(
-            context.user_data, reply_markup=InlineKeyboardMarkup(buttons))
+            text, reply_markup=InlineKeyboardMarkup(buttons))
     else:
         update.message.reply_text('No buttons added yet')
     main_menu(update,context)
