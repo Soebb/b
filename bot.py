@@ -76,13 +76,13 @@ def send(update: Update, context: CallbackContext):
         print(text)
 
         user_d = context.user_data
-    buttons = user_d.get('buttons')
-    if buttons:
-        update.message.reply_text(
-            text, reply_markup=InlineKeyboardMarkup(buttons))
-    else:
-        update.message.reply_text('No buttons added yet')
-    main_menu(update,context)
+        buttons = user_d.get('buttons')
+        if buttons:
+            update.message.reply_text(
+                text, reply_markup=InlineKeyboardMarkup(buttons))
+        else:
+            update.message.reply_text('No buttons added yet')
+        main_menu(update,context)
 
 
 def cancel(update: Update, context: CallbackContext):
