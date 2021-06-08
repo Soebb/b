@@ -1,5 +1,5 @@
 
-
+from config import TY
 import logging
 from dotenv import load_dotenv
 from telegram.ext.filters import Filters
@@ -44,9 +44,9 @@ def add_button(update: Update, context: CallbackContext):
     try:
         splitted = args.split('-')
         print(splitted)
-        text = splitted[0].strip()
+        TX = splitted[0].strip()
         url = splitted[1].strip()
-        print(text,url)
+        print(TX,url)
 
     except Exception as err:
         update.message.reply_text(str(err)[:2000])
@@ -55,16 +55,16 @@ def add_button(update: Update, context: CallbackContext):
     user_d = context.user_data
     if not 'buttons' in user_d:
         user_d['buttons'] = []
-    user_d['buttons'].append([IKB(text, url=url)])
+    user_d['buttons'].append([IKB(TX, url=url)])
     update.message.reply_text('Done')
     main_menu(update,context)
-TEXTT = text
+
 
 def preview(update: Update, context: CallbackContext):
     user_d = context.user_data
     buttons = user_d.get('buttons')
     if buttons:
-        update.message.reply_text((TEXTT), reply_markup=InlineKeyboardMarkup(buttons))
+        update.message.reply_text((TY), reply_markup=InlineKeyboardMarkup(buttons))
     else:
         update.message.reply_text('No buttons added yet')
     main_menu(update,context)
