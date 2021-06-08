@@ -1,5 +1,5 @@
 
-from config import TY
+from config import Config
 import logging
 from dotenv import load_dotenv
 from telegram.ext.filters import Filters
@@ -64,7 +64,7 @@ def preview(update: Update, context: CallbackContext):
     user_d = context.user_data
     buttons = user_d.get('buttons')
     if buttons:
-        update.message.reply_text((TY), reply_markup=InlineKeyboardMarkup(buttons))
+        update.message.reply_text((Config.TY), reply_markup=InlineKeyboardMarkup(buttons))
     else:
         update.message.reply_text('No buttons added yet')
     main_menu(update,context)
