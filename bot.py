@@ -69,11 +69,14 @@ def preview(update: Update, context: CallbackContext):
     main_menu(update,context)
 
 def send(update: Update, context: CallbackContext):
-    update.message.reply_text('Sent message')
-    #  send the message
-
     user_d = context.user_data
-    user_d.clear()
+    buttons = user_d.get('buttons')
+    if buttons:
+        update.message.reply_text(
+            context.user_data, reply_markup=InlineKeyboardMarkup(buttons))
+    else:
+        update.message.reply_text('No buttons added yet')
+    main_menu(update,context)
 
 
 def cancel(update: Update, context: CallbackContext):
