@@ -16,7 +16,7 @@ from telegram import InlineKeyboardButton as IKB, InlineKeyboardMarkup, ForceRep
 
 load_dotenv()
 BOT_TOKEN = os.getenv('BOT_TOKEN')
-
+TEXXT = text
 
 def start(update: Update, context: CallbackContext):
     ''' Replies to start command '''
@@ -46,7 +46,7 @@ def add_button(update: Update, context: CallbackContext):
         text = splitted[0].strip()
         url = splitted[1].strip()
         print(text,url)
-        TEXTT = text
+        TEXTT=text
     except Exception as err:
         update.message.reply_text(str(err)[:2000])
         return
