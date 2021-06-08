@@ -74,7 +74,8 @@ def send(update: Update, context: CallbackContext):
         print(splitted)
         text = splitted[0].strip()
         print(text)
-    user_d = context.user_data
+
+        user_d = context.user_data
     buttons = user_d.get('buttons')
     if buttons:
         update.message.reply_text(
