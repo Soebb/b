@@ -85,13 +85,6 @@ def send(update: Update, context: CallbackContext):
         main_menu(update,context)
 
 
-def cancel(update: Update, context: CallbackContext):
-    user_d = context.user_data
-    user_d.clear()
-    update.message.reply_text('Cleared user data')
-    main_menu(update,context)
-
-
 if __name__ == "__main__":
 
     updater = Updater(token=BOT_TOKEN)
@@ -109,7 +102,6 @@ if __name__ == "__main__":
 
     _handlers['add_button_handler'] = CommandHandler('add', add_button)
     _handlers['preview_handler'] = CommandHandler('preview', preview)
-    _handlers['cancel_handler'] = CommandHandler('cancel', cancel)
     _handlers['send_handler'] = CommandHandler('send', send)
 
     for name, _handler in _handlers.items():
