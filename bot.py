@@ -74,12 +74,12 @@ def send(update: Update, context: CallbackContext):
         print(splitted)
         text = splitted[0].strip()
         print(text)
-
+        TEXT = 'text'
         user_d = context.user_data
         buttons = user_d.get('buttons')
         if buttons:
             update.message.reply_text(
-                text, reply_markup=InlineKeyboardMarkup(buttons))
+                TEST, reply_markup=InlineKeyboardMarkup(buttons))
         else:
             update.message.reply_text('No buttons added yet')
         main_menu(update,context)
