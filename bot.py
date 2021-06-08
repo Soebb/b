@@ -83,7 +83,8 @@ def send(update: Update, context: CallbackContext):
         else:
             update.message.reply_text('No buttons added yet')
         main_menu(update,context)
-
+    except:
+        pass
 
 if __name__ == "__main__":
 
