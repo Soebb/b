@@ -38,7 +38,7 @@ def add_button(update: Update, context: CallbackContext):
     args = ' '.join(context.args).strip()
     if not args:
         update.message.reply_text(
-            'Please send the text and link with the command. \nExample: \n\n`/add Click here - https://aahnik.github.io`',parse_mode= ParseMode.MARKDOWN)
+            'Please send the text and link with the command. \nExample: \n\n`/add Click here - https://www.telegram.com`',parse_mode= ParseMode.MARKDOWN)
         return
     try:
         splitted = args.split('-')
@@ -63,7 +63,7 @@ def preview(update: Update, context: CallbackContext):
     buttons = user_d.get('buttons')
     if buttons:
         update.message.reply_text(
-            'Buttons Preview', reply_markup=InlineKeyboardMarkup(buttons))
+            user_id, reply_markup=InlineKeyboardMarkup(buttons))
     else:
         update.message.reply_text('No buttons added yet')
     main_menu(update,context)
