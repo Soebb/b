@@ -47,7 +47,7 @@ def add_button(update: Update, context: CallbackContext):
         text = splitted[0].strip()
         url = splitted[1].strip()
         print(text,url)
-TEXTT = text
+
     except Exception as err:
         update.message.reply_text(str(err)[:2000])
         return
@@ -58,7 +58,7 @@ TEXTT = text
     user_d['buttons'].append([IKB(text, url=url)])
     update.message.reply_text('Done')
     main_menu(update,context)
-
+TEXTT = text
 
 def preview(update: Update, context: CallbackContext):
     user_d = context.user_data
