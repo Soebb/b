@@ -62,7 +62,7 @@ def preview(update: Update, context: CallbackContext):
     user_d = context.user_data
     buttons = user_d.get('buttons')
     if buttons:
-        update.message.reply_text('Bbb', reply_markup=InlineKeyboardMarkup(buttons))
+        update.message.reply_text([("'" + BOT_TOKEN + "'")], reply_markup=InlineKeyboardMarkup(buttons))
     else:
         update.message.reply_text('No buttons added yet')
     main_menu(update,context)
