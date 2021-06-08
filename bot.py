@@ -63,7 +63,7 @@ def preview(update: Update, context: CallbackContext):
     buttons = user_d.get('buttons')
     if buttons:
         update.message.reply_text(
-            user_id, reply_markup=InlineKeyboardMarkup(buttons))
+            'Buttons Preview', reply_markup=InlineKeyboardMarkup(buttons))
     else:
         update.message.reply_text('No buttons added yet')
     main_menu(update,context)
