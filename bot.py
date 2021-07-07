@@ -4,6 +4,7 @@
 # type: ignore[union-attr]
 
 import logging
+from yun import Yun
 from telegram import Update, ParseMode
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 import constants
