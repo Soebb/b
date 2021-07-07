@@ -17,8 +17,6 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-import settings
-
 token = os.environ.get('BOT_TOKEN')
 updater = Updater(token)
 
