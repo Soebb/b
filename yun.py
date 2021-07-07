@@ -19,6 +19,6 @@ class Yun:
 		req         = requests.post('https://yun.ir/api/v1/urls', data=data, headers=headers)
 		if req.status_code == 200:
 			req = req.json()
-			# req = req['doc']['url'] for get short url
+			req = req['doc']['url']
 
 		return req
