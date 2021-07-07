@@ -24,6 +24,10 @@ def start(update: Update, context: CallbackContext) -> None:
     update.message.reply_text(constants.welcome_text)
 
 
+def shortlink(update: Update, context: CallbackContext) -> None:
+    api = Yun('509:66zjkr6vbw08csog80swgccgow8owwc')
+    result = api.short('title', 'url')
+
 
 
 
