@@ -23,15 +23,13 @@ updater = Updater(token)
 
 def start(update: Update, context: CallbackContext):
     update.message.reply_text(
-        "Hi !  Welcome to the Wikipedia bot! In order to find something type /search and your request. For example /search Ibn Rushd"
+        "Hi !  I'm a link shortener bot"
     )
-
-
 
 def shortlink(update: Update, context: CallbackContext):
     api = Yun('509:66zjkr6vbw08csog80swgccgow8owwc')
-    result = api.short('title', 'url')
-    update.message.reply_text("your link: [{result}]")
+    result = api.short('url')
+    update.message.reply_text("your link: " + str(result))
 
 
 dispatcher = updater.dispatcher
