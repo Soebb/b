@@ -33,7 +33,7 @@ def start(update: Update, context: CallbackContext):
 def shortlink(update: Update, context: CallbackContext):
     api = Yun('509:66zjkr6vbw08csog80swgccgow8owwc')
     result = api.short('title', 'url')
-    update.message.reply_text(
+    update.message.reply_text("your link: " + result)
 
 
 dispatcher = updater.dispatcher
