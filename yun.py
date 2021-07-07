@@ -5,8 +5,9 @@ class Yun:
 	def __init__(self, token: str):
 		self.token = token
 
-	def short(self, url):
-                body = {"url": f"{url}"}
+	def short(self, title, url):
+                body = {"title": f"{title}",
+				"url": f"{url}"}
 
 		data = json.dumps(body).encode('utf8')
 
