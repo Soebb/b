@@ -1,2 +1,2 @@
-python-dotenv
-python-telegram-bot
+python-telegram-bot==12.1.0
+requests
