@@ -43,7 +43,7 @@ def main():
     dispatcher.add_handler(CommandHandler("start", start))
 
     # on noncommand i.e message - echo the message on Telegram
-    dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, reply_to_text_message))
+    dispatcher.add_handler(MessageHandler(filters.regex(r'https?://[^\s]+'), shortlink))
 
     # Start the Bot
     updater.start_polling()
